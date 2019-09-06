@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            -webkit-perspective: 2500;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid red;
+            position: relative;
+            animation: name 5s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        .box>div {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-style: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 2s linear;
+        }
+
+        .box>div:nth-child(1) {
+            background-color: red;
+            transform: translateZ(-150px);
+            z-index: 2;
+        }
+
+        .box:hover div:nth-child(1) {
+            transform: translateZ(-300px);
+        }
+
+        .box>div:nth-child(2) {
+            background-color: green;
+            transform: rotateY(90deg) translateZ(-150px)
+        }
+
+        .box:hover div:nth-child(2) {
+            transform: rotateY(90deg) translateZ(-300px);
+        }
+
+        .box>div:nth-child(3) {
+            background-color: pink;
+            transform: rotateY(90deg) translateZ(150px)
+        }
+
+        .box:hover div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(300px);
+        }
+
+        .box>div:nth-child(4) {
+            background-color: blue;
+            transform: rotateX(90deg) translateZ(150px)
+        }
+
+        .box:hover div:nth-child(4) {
+            transform: rotateX(90deg) translateZ(300px);
+        }
+
+        .box>div:nth-child(5) {
+            background-color: purple;
+            transform: rotateX(90deg) translateZ(-150px)
+        }
+
+        .box:hover div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(-300px);
+        }
+
+        .box>div:nth-child(6) {
+            background-color: orange;
+            transform: translateZ(150px)
+        }
+
+        .box:hover div:nth-child(6) {
+            transform: translateZ(300px);
+        }
+
+        @keyframes name {
+            from {
+                transform: rotateY(0)
+            }
+
+            to {
+                transform: rotateY(360deg) rotateX(360deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+
+</html>
